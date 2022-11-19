@@ -4,8 +4,8 @@ int bookAllocation(int*, int, int);
 bool isPossible(int*, int, int, int);
 
 int main(){
-    int arr[] = {1,2,3,1,1};
-    std::cout<<"Answer is: "<<bookAllocation(arr, 4, sizeof(arr) / 4)<<std::endl;
+    int arr[] = {7,2,5,10,8};
+    std::cout<<"Answer is: "<<bookAllocation(arr, 2, sizeof(arr) / 4)<<std::endl;
     return 0;
 }
 
