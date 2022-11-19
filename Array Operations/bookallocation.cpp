@@ -4,8 +4,8 @@ int bookAllocation(int*, int, int);
 bool isPossible(int*, int, int, int);
 
 int main(){
-    int arr[] = {12, 34, 67, 90};
-    std::cout<<"Answer is: "<<bookAllocation(arr, 2, 4)<<std::endl;
+    int arr[] = {1,2,3,1,1};
+    std::cout<<"Answer is: "<<bookAllocation(arr, 4, sizeof(arr) / 4)<<std::endl;
     return 0;
 }
 
@@ -23,7 +23,7 @@ int bookAllocation(int* arr, int m, int n){
     while(left < right){
         if(isPossible(arr, n, m, mid)){
             ans = mid;
-            right = mid - 1;
+            right = mid;
         }
         else{
             left = mid + 1;
