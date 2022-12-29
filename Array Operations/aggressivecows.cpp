@@ -13,7 +13,7 @@ int aggressiveCows(std::vector<int>& arr, int k, int n){
     sort(arr.begin(), arr.end());
 
     int left = 0;
-    int right = arr[n - 1];
+    int right = arr[n - 1] - arr[0];
     int mid = left + (right - left) / 2;
     int ans = -1;
 
