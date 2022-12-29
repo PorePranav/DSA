@@ -4,7 +4,7 @@
 int pivotInRotatedSorted(std::vector<int>);
 
 int main(){
-    std::vector<int> numbers = {11,13,15,17};
+    std::vector<int> numbers = {3,4,5,1,2};
     std::cout<<"The pivot element of the rotated and sorted array is: "<<pivotInRotatedSorted(numbers)<<std::endl;
 
     return 0;
