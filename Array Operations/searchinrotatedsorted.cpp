@@ -24,7 +24,7 @@ int searchInRotatedSorted(std::vector<int> numbers, int target){
         mid = left + (right - left) / 2;
     } 
 
-    int pivot = left;
+    int pivot = mid;
 
     if(numbers.at(pivot) <= target && target <= numbers.at(numbers.size() - 1)){
         left = pivot;
