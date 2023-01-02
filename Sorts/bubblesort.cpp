@@ -1,27 +1,33 @@
-#include<iostream>
-using namespace std;
+#include <iostream>
+
+void bubbleSort(int*, int);
+void printArray(int*, int);
 
 int main(){
-    int n;
-    cin>>n;
+    int arr[] = {10, 1, 7, 6, 14, 9};
 
-    int arr[n];
-    for(int i=0; i<n; i++){
-        cin>>arr[i];
+    printArray(arr, sizeof(arr)/4);
+    bubbleSort(arr, sizeof(arr)/4);
+    printArray(arr, sizeof(arr)/4);
+
+    return 0;
+}
+
+void printArray(int* arr, int n){
+    for(int i = 0; i < n; i++){
+        std::cout<<arr[i]<<" ";
     }
-    int counter=0;
-    while(counter<=n-1){
-        for(int i=0; i<n-counter; i++){
-            if(arr[i]>arr[i+1]){
+    std::cout<<std::endl;
+}
+
+void bubbleSort(int* arr, int n){
+    for(int i = 0; i < n; i++){
+        for(int j = i + 1; j < n; j++){
+            if(arr[i] > arr[j]){
                 int temp = arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
-        counter++;
     }
-    for(int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
-    }
-
 }
