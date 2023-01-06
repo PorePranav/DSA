@@ -1,24 +1,42 @@
-#include<iostream>
-using namespace std;
+#include <iostream>
+void insertionSort(int*, int);
+void printArray(int*, int);
 
 int main(){
-    int n;
-    cin>>n;
+    int arr[] = {10, 1, 7, 4, 8, 2, 11};
+    
+    std::cout<<"Before sorting: ";
+    printArray(arr, sizeof(arr) / 4);
+    
+    insertionSort(arr, sizeof(arr) / 4);
+    
+    std::cout<<"After sorting: ";
+    printArray(arr, sizeof(arr) / 4);
+    return 0;
+}
 
-    int arr[n];
-    for(int i=0; i<n; i++){
-        cin>>arr[i];
+void printArray(int* arr, int n){
+    for(int i = 0; i < n; i++){
+        std::cout<<arr[i]<<" ";
     }
-    for(int i=1; i<n; i++){
-        int current = arr[i];
-        int j=i-1;
-        while(arr[j]>current && j>=0){
-            arr[j+1]=arr[j];
+    std::cout<<std::endl;
+}
+
+void insertionSort(int* arr, int n){
+    for(int i = 1; i < n; i++){
+        int temp = arr[i];
+        int j = i - 1;
+
+        while(j >= 0){
+            if(arr[j] > temp)
+                arr[j + 1] = arr[j];
+
+            else
+                break;
+
             j--;
         }
-        arr[j+1]=current;
-    }
-    for(int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
+
+        arr[j + 1] = temp;
     }
 }
