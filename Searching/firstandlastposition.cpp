@@ -4,8 +4,8 @@
 std::pair<int, int> firstAndLast(int*, int, int);
 
 int main(){
-    int arr[] = {1, 2, 3, 3, 5, 8, 8, 8, 8, 8, 10};
-    std::pair<int, int> result = firstAndLast(arr, sizeof(arr) / sizeof(arr[0]), 70);
+    int arr[] = {1, 3, 5, 5, 8, 8};
+    std::pair<int, int> result = firstAndLast(arr, sizeof(arr) / sizeof(arr[0]), 8);
     std::cout<<"Left most occurence is: "<<result.first<<std::endl;
     std::cout<<"Right most occurence is: "<<result.second<<std::endl; 
     return 0;
